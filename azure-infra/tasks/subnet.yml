@@ -1,0 +1,10 @@
+---
+  - name: Add subnets
+    azure_rm_subnet:
+      resource_group: "{{rg_name}}"
+      name: "{{snet_name}}"
+      address_prefix: "{{snet_addr}}"
+      virtual_network: "{{vnet_name}}"
+    register: snet
+  - debug:
+      var: snet

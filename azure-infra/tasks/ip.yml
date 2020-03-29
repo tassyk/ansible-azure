@@ -1,0 +1,9 @@
+---
+  - name: Create public IP address
+    azure_rm_publicipaddress:
+       resource_group: "{{rg_name}}"
+       name: "{{pubip}}"
+       allocation_method: "static"
+    register: ip
+  - debug:
+        var: ip

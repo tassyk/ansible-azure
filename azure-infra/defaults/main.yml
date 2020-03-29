@@ -1,0 +1,31 @@
+---
+# vars file for azure-infra
+
+# Ressource Group
+rg_name: myResGroup
+rg_location: uksouth
+
+# Vitual Networks
+vnet_name: myVnet
+vnet_addr: "10.100.0.0/16"
+
+# Sub Networks
+subnet_name: mySubnet
+subnet_addr: "10.100.20.0/24"
+
+# Public IPs
+pubip: myVmPubIP
+
+# Network Security Group
+nsg_name: mySecgroup
+
+# Virtual network card
+nic_name: myVnic
+ 
+# Virtual Machines (Centos)
+vm_name: myVM
+vm_size: Standard_B2s
+vm_admin: user
+# SSH Keys
+ssh_keypath: "/home/user/.ssh/authorized_keys"
+ssh_pubkey: "your_rsa_ssh_pub_key"

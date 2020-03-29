@@ -1,0 +1,21 @@
+---
+  - name: Create VM
+    azure_rm_virtualmachine:
+      resource_group: "{{rg_name}}"
+      name: "{{vm_name}}"
+      vm_size: "{{vm_size}}"
+      admin_username: "{{vm_admin}}"
+      ssh_password_enabled: false
+      ssh_public_keys:
+      - path: "{{ssh_keypath}}" 
+        key_data: "{{ssh_pubkey}}"
+      network_interfaces: "{{nic_name}}"
+      image:
+       offer: CentOS
+       publisher: OpenLogic
+       sku: '7.5'
+       version: latest
+    register: vm
+  - debug:
+      var: vm
+

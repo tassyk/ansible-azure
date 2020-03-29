@@ -1,0 +1,30 @@
+---
+#tasks file for azure-infra
+
+- name: Include rg.yml
+  include: rg.yml
+  tags: rg
+
+- name: Include vnet.yml
+  include: vnet.yml
+  tags: vnet
+
+- name: Include subnet.yml
+  include: subnet.yml
+  tags: subnet
+
+- name: Include ip.yml
+  include: ip.yml
+  tags: ip
+
+- name: Include nsg.yml
+  include: nsg.yml
+  tags: nsg
+
+- name: Include nic.yml
+  include: nic.yml
+  tags: nic
+
+- name: Include vm.yml
+  include: vm.yml
+  tags: vm

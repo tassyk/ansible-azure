@@ -1,0 +1,43 @@
+---
+# vars file for azure-infra
+
+# Ressource Group
+resgroup:
+    - name: myResGroup
+      location: uksouth
+
+# Vitual Networks
+virtnet:
+    - name: myVnet
+      rg: "{{resgroup.name}}"
+      addr: "10.100.0.0/16"
+
+# Sub Networks
+subnet:
+    - name: mySubnet
+      rg: "{{resgroup.name}}"
+      addr: "10.100.20.0/24"
+      vnet: myVnet
+
+# Public IPs
+IPs:
+    - name: myVmPubIP
+      method: static
+      rg: "{{resgroup.name}}"
+
+# Network Security Group
+netsecgroup:
+    - name: mySecgroup
+      rg: "{{resgroup.name}}"
+
+vnic:
+    - name: myVnic
+      rg: "{{resgroup.name}}"
+      vnet: myVnet
+      subnet: mySubnet
+      pubip: myVmPubIP
+      nsg: mySecgroup
+ 
+# SSH Keys
+ssh_keypath: "/home/user/.ssh/authorized_keys"
+ssh_pubkey: "your_rsa_ssh_pub_key"
