@@ -1,5 +1,5 @@
 ---
-# vars file for azure-infra
+# vars file for infra
 
 # Ressource Group
 rg_name: TestResGroup

@@ -1,5 +1,5 @@
 ---
-#tasks file for azure-infra
+#tasks file for infra
 
 - name: Include rg.yml
   include: rg.yml
