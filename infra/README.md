@@ -1,7 +1,20 @@
 Role Name
 =========
 
-Ce role ansible permet de créer une infra (vnet, subnet, IP, ..., VM)  dans Azure
+Ce role ansible permet de créer une infra (vnet, subnet, IP, ..., VM)  dans Azure.
+
+**Fonctionnement :**
+Le playbook infra.yml exécute le rôle. 
+Il crée tout l'environnement Azure pour déployer la ressource (ici une VM) :
+- un groupe de ressource qui va contenir toutes les ressources
+- un réseau virtuel (vnet) dans lequel se trouve un sous réseau (subnet)
+- une IP publique statique pour la VM
+- une carte réseau avec un nom explicite pour la VM
+- un groupe de sécurité d'application auquel la VM est rattachée qui n'autorise que certains ports (SSH)
+- une machine virtuelle Linux (Centos).
+
+Mais il est possible de créer avec ce role plus qu'une machine virtuelle. Il faut dans ce cas améliorer les playbooks.
+
 
 Requirements
 ------------
