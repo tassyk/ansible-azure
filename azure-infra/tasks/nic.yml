@@ -6,7 +6,7 @@
       virtual_network: "{{vnet_name}}"
       subnet: "{{snet_name}}"
       public_ip_name: "{{pubip}}"
-      security_group: "{{nsg}}"
+      security_group: "{{nsg_name}}"
     register: nic
   - debug:
       var: nic
